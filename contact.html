@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LuxDrive - Contact</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">LuxDrive</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Locations.html">Locations</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Contact Us</h1>
+    <p>Have a question? We'd love to hear from you!</p>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-wrap">
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form">
+          <h2 style="color:var(--primary); margin-bottom:1.2rem;">Send a Inquiry</h2>
+
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" placeholder="e.g. Dev Limbu"/>
+            <p class="error-msg" id="err-name">Please enter your full name.</p>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="text" id="email" placeholder="e.g. dev@example.com"/>
+            <p class="error-msg" id="err-email">Please enter a valid email address.</p>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="phone">Phone Number (optional)</label>
+            <input type="text" id="phone" placeholder="e.g. +977-980000000"/>
+            <p class="error-msg" id="err-phone">Phone must be digits only (7-15 numbers).</p>
+          </div>
+
+          <!-- Topic -->
+          <div class="form-group">
+            <label for="topic">Topic *</label>
+            <select id="topic">
+              <option value="">-- Select a topic --</option>
+              <option value="travel">Price Inquiry</option>
+              <option value="trekking">Vechile Information</option>
+              <option value="feedback">Website Feedback</option>
+              <option value="other">Others</option>
+            </select>
+            <p class="error-msg" id="err-topic">Please select a topic.</p>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea id="message" placeholder="Write your message here..."></textarea>
+            <p class="error-msg" id="err-message">Please enter a message (at least 10 characters).</p>
+          </div>
+
+          <!-- Submit Button -->
+          <button class="submit-btn" onclick="validateForm()">Send Message</button>
+
+          <!-- Success Message -->
+          <div class="success-msg" id="success-msg">
+            ✅ Thank you! Your message has been sent. We will get back to you soon.
+          </div>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p>Feel free to reach out with any questions about LuxDrive or any issues you've found.</p>
+
+          <div class="info-box">
+            <p>📍 <strong>Address:</strong> Thamel, Kathmandu, Nepal - 12345</p>
+            <p>📞 <strong>Phone:</strong> +977-9845986879</p>
+            <p>📧 <strong>Email:</strong>
+              <a href="mailto:info@nepalexplorer.com">devwasdjkl@gmail.com</a>
+            </p>
+            <p>🕐<strong>Office Hours:</strong> Sun - Fri, 9:00 AM - 5:00 PM NPT</p>
+          </div>
+          <br/>
+
+          <br/>
+          <h3>Frequently Asked Questions :</h3>
+          <div class="table-wrap">
+            <table class="info-table">
+              <thead>
+                <tr><th colspan="2">Quick FAQ</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Do I need to pay?</strong></td>
+                  <td>Yes, You need to pay Lol.</td>
+                </tr>
+                <tr>
+                  <td><strong>Best time to visit?</strong></td>
+                  <td>We are open All year round.</td>
+                </tr>
+                <tr>
+                  <td><strong>Currency?</strong></td>
+                  <td>Bitcoin (BTC)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>LuxDrive</h4>
+          <p>Your guide to the wonders of Sports Cars.</p>
+          <p>📧 <a href="mailto:devwasdjkl@gmail.com" class="footer-link">devwasdjkl@gmail.com</a></p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Locations.html">Locations</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Address</h4>
+          <p>Thamel, Kathmandu<br/>Nepal - 12345<br/>Phone: +977-9845986879</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 LuxDrive | All Rights Reserved</p>
+        <p class="text-nav">
+          <a href="index.html">Home</a> |
+          <a href="about.html">About</a> |
+          <a href="Locations.html">Locations</a> |
+          <a href="gallery.html">Gallery</a> |
+          <a href="contact.html">Contact</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CONTACT FORM VALIDATION (JavaScript) ===== -->
+  <script>
+    function validateForm() {
+      var isValid = true;
+
+      // Helper: show or hide an error message
+      function showError(id, show) {
+        document.getElementById(id).style.display = show ? 'block' : 'none';
+      }
+
+      // 1. Full Name — must not be empty
+      var name = document.getElementById('fullname').value.trim();
+      if (name === '') {
+        showError('err-name', true);
+        isValid = false;
+      } else {
+        showError('err-name', false);
+      }
+
+      // 2. Email — must match basic email format
+      var email = document.getElementById('email').value.trim();
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        showError('err-email', true);
+        isValid = false;
+      } else {
+        showError('err-email', false);
+      }
+
+      // 3. Phone — optional, but if filled must be 7-15 digits
+      var phone = document.getElementById('phone').value.trim();
+      if (phone !== '') {
+        var phoneClean = phone.replace(/[\s\-\+]/g, ''); // remove spaces, dashes, plus
+        var phonePattern = /^\d{7,15}$/;
+        if (!phonePattern.test(phoneClean)) {
+          showError('err-phone', true);
+          isValid = false;
+        } else {
+          showError('err-phone', false);
+        }
+      } else {
+        showError('err-phone', false);
+      }
+
+      // 4. Topic — must select one
+      var topic = document.getElementById('topic').value;
+      if (topic === '') {
+        showError('err-topic', true);
+        isValid = false;
+      } else {
+        showError('err-topic', false);
+      }
+
+      // 5. Message — must be at least 10 characters
+      var message = document.getElementById('message').value.trim();
+      if (message.length < 10) {
+        showError('err-message', true);
+        isValid = false;
+      } else {
+        showError('err-message', false);
+      }
+
+      // If all valid, show success message
+      if (isValid) {
+        document.getElementById('success-msg').style.display = 'block';
+        // Reset the form
+        document.getElementById('fullname').value  = '';
+        document.getElementById('email').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('topic').value = '';
+        document.getElementById('message').value = '';
+      } else {
+        document.getElementById('success-msg').style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
