@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LuxDrive - Gallery</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Gallery-specific styles */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    /* Each thumbnail is a link */
+    .gallery-thumb {
+      display: block;
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .gallery-thumb:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      border-color: var(--gold);
+      text-decoration: none;
+    }
+
+    .gallery-thumb .thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Hover overlay with label */
+    .thumb-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: white;
+      font-size: 0.8rem;
+      font-family: var(--font-ui);
+      padding: 20px 10px 10px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .gallery-thumb:hover .thumb-overlay {
+      opacity: 1;
+    }
+
+    /* Lightbox overlay */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    }
+
+    .lightbox-caption {
+      color: #fff;
+      margin-top: 16px;
+      font-size: 1.1rem;
+      font-family: var(--font-ui);
+      text-align: center;
+    }
+
+    .lightbox-desc-text {
+      color: #aaa;
+      margin-top: 6px;
+      font-size: 0.9rem;
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px; right: 24px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2.2rem;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 10000;
+    }
+
+    .lightbox-close:hover {
+      color: #e94560;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">LuxDrive</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Locations.html">Locations</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Photo Gallery</h1>
+  </div>
+
+  <!-- GALLERY SECTION -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Our Fleet Photoshoot</h2>
+      <p class="section-desc">A visual display of the magnificence of LuxDrive's vehicles.</p>
+
+      <div class="gallery-grid">
+
+        <a href="#" class="gallery-thumb"
+           onclick="openLightbox('Img1.jpg'); return false;">
+          <img class="thumb-img" src="Img1.jpg" alt="Error"/>
+          <div class="thumb-overlay">By Clara Avarice</div>
+        </a>
+
+        <a href="#" class="gallery-thumb"
+           onclick="openLightbox('Img2.jpg'); return false;">
+          <img class="thumb-img" src="Img2.jpg" alt="Error"/>
+          <div class="thumb-overlay">By Subham Karki</div>
+        </a>
+
+        <a href="#" class="gallery-thumb"
+           onclick="openLightbox('Img3.jpg'); return false;">
+          <img class="thumb-img" src="Img3.jpg" alt="Error"/>
+          <div class="thumb-overlay">By Arun Mangol</div>
+        </a>
+
+        <a href="#" class="gallery-thumb"
+           onclick="openLightbox('Img4.jpg'); return false;">
+          <img class="thumb-img" src="Img4.jpg" alt="Error"/>
+          <div class="thumb-overlay">By Dev Limbu</div>
+        </a>
+
+        <a href="#" class="gallery-thumb"
+           onclick="openLightbox('Img5.jpg'); return false;">
+          <img class="thumb-img" src="Img5.jpg" alt="Errork"/>
+          <div class="thumb-overlay">By Monkey D. Luffy</div>
+        </a>
+
+        <a href="#" class="gallery-thumb"
+           onclick="openLightbox('Img6.jpg'); return false;">
+          <img class="thumb-img" src="Img6.jpg" alt="Error"/>
+          <div class="thumb-overlay">By Rythm</div>
+        </a>
+
+        <a href="#" class="gallery-thumb"
+           onclick="openLightbox('Img7.jpg'); return false;">
+          <img class="thumb-img" src="Img7.jpg" alt="Error"/>
+          <div class="thumb-overlay">By Someone</div>
+        </a>
+
+        <a href="#" class="gallery-thumb"
+           onclick="openLightbox('Img8.jpg'); return false;">
+          <img class="thumb-img" src="Img8.jpg" alt="Error"/>
+          <div class="thumb-overlay">By Shyam</div>
+        </a>
+
+        <a href="#" class="gallery-thumb"
+           onclick="openLightbox('Img9.jpg'); return false;">
+          <img class="thumb-img" src="Img9.jpg" alt="Error"/>
+          <div class="thumb-overlay">By IceSpice</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightboxOnOverlay(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img class="lightbox-img" id="lb-img" src="" alt=""/>
+    <div class="lightbox-caption" id="lb-title"></div>
+    <div class="lightbox-desc-text" id="lb-desc"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>LuxDrive</h4>
+          <p>Your guide to the wonders of Sport Cars.</p>
+          <p>📧 <a href="mailto:devwasdjkl@gmail.com" class="footer-link">devwasdjkl@gmail.com</a></p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Locations.html">Locations</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Address</h4>
+          <p>Thamel, Kathmandu<br/>Nepal - 12345<br/>Phone: +977-9845986879</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 LuxDrive | All Rights Reserved</p>
+        <p class="text-nav">
+          <a href="index.html">Home</a> |
+          <a href="about.html">About</a> |
+          <a href="Locations.html">Locations</a> |
+          <a href="gallery.html">Gallery</a> |
+          <a href="contact.html">Contact</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function openLightbox(src, title, desc) {
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lb-img').alt = title;
+      document.getElementById('lb-title').textContent = title;
+      document.getElementById('lb-desc').textContent = desc;
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    function closeLightboxOnOverlay(event) {
+      if (event.target === document.getElementById('lightbox')) {
+        closeLightbox();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
